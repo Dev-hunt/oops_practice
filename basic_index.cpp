@@ -1,5 +1,5 @@
 #include<iostream>
-#include "Hero.cpp"
+#include "basic_Hero.cpp"
 using namespace std;
 
 int main(){
