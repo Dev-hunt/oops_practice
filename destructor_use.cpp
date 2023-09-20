@@ -3,7 +3,7 @@ using namespace std;
 
 class Hero{
 
-    // make constructor public because it is  by-default private
+    // make constructor public because by default private
     public:
     char level;
     int point;
@@ -14,34 +14,35 @@ class Hero{
         cout<<"constructor called"<<endl;
 
     }
-// paramerterized contructor
+    
     Hero(int point){
         cout<<"parameterized-constructor called"<<endl;
         cout<<point<<endl;
     }
-// using this keyword as a pointer to store address of  current object
-    Hero(int point, char level){
-        cout<<"parameterized-constructor called"<<endl;
-        this->level=level;
-        this->point=point;
-    }
+
     void printg(){
         cout<<level<<endl;
         cout<<point<<endl;
     }
+
+    //destructor creation
+    ~Hero(){
+        cout<<"destructor called"<<endl;
+    }
 };
 
 int main(){
-    // cout<<"HI"<<endl;
+    
     // object static
     Hero ramesh;
-    // cout<<"Hello"<<endl;
+    
+// object dyanmic
+    Hero *h1=new Hero();
 
-    // Hero *h1=new Hero();
+    delete h1;// for dynamic allocated object we have to delete it manually for memory deallocation 
+    // after that the destructor called
 
     // object with parameter
     Hero ram(11);
 
-    Hero h1(20,'c');
-    h1.printg();
 }
